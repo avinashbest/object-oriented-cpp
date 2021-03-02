@@ -4,15 +4,15 @@ using namespace std;
 
 int main()
 {
-	fraction f1(10, 2);
-	fraction f2(15, 4);
+	fraction f1(10, 3);
+	fraction f2(5, 2);
 
-	// f1.add(f2);
+	//  f1.add(f2);
 
 	// f1.print();
 	// f2.print();
 
-	// f1.multiply(f2)f
+	// f1.multiply(f2);
 
 	// f1.print();
 	// f2.print();
@@ -53,14 +53,22 @@ int main()
 	// f1.print();
 	// ++f1;
 
-	f1.print();
-	fraction f3 = ++(++f1);
-	f1.print();
+	// f1.print();
+	// fraction f3 = ++(++f1);
+	// f1.print();
 	// f3.print();
 
 	// fraction f3 = ++f1;
 	// f1.print();
 	// f3.print();
+
+	// fraction f3 = f1++;
+	// f1.print();
+	// f3.print();
+
+	(f1 += f2) += f2;
+	f1.print();
+	f2.print();
 
 	return 0;
 }

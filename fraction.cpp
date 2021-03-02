@@ -5,13 +5,13 @@ private:
 	int denominator;
 
 public:
-	//Parameterized Constructor
+	//*Parameterized Constructor
 	fraction(int numerator, int denominator)
 	{
 		this->numerator = numerator;
 		this->denominator = denominator;
 	}
-	//Getters
+	//*Getters
 	int getNumerator() const
 	{
 		return numerator;
@@ -20,7 +20,7 @@ public:
 	{
 		return denominator;
 	}
-	//Setters
+	//*Setters
 	void setNumerator(int numerator)
 	{
 		this->numerator = numerator;
@@ -29,7 +29,7 @@ public:
 	{
 		this->denominator = denominator;
 	}
-	//Display function
+	//*Display function
 	void print() const
 	{
 		std::cout << numerator << " / " << denominator << std::endl;
@@ -49,7 +49,7 @@ public:
 		this->numerator = this->numerator / gcd;
 		this->denominator = this->denominator / gcd;
 	}
-	//Addition function
+	//*Addition function
 	// void add(fraction const &f)
 	// {
 	// 	//L.C.M
@@ -88,7 +88,7 @@ public:
 		return fNew;
 	}
 
-	//Multiply function
+	//*Multiply function
 	void multiply(fraction const &f)
 	{
 		this->numerator = this->numerator * f.numerator;
@@ -105,16 +105,40 @@ public:
 		fNew.simplify();
 		return fNew;
 	}
-	//Equality check
+	//*Equality check
 	bool operator==(fraction const &f) const
 	{
 		return (this->numerator == f.numerator && this->denominator == f.denominator);
 	}
-	//Overloading operator++
+	//Overloading pre-increment operator++
 	fraction &operator++()
 	{
 		this->numerator = this->numerator + denominator;
 		simplify();
+		return *this;
+	}
+	//Overloading post-increment operator
+	fraction operator++(int)
+	{
+		fraction fNew(numerator, denominator);
+		numerator = numerator + denominator;
+		simplify();
+		fNew.simplify();
+		return fNew;
+	}
+
+	fraction &operator+=(fraction const &f)
+	{
+		int LCM = this->denominator * f.denominator;
+		int x = LCM / this->denominator;
+		int y = LCM / f.denominator;
+
+		int num = (x * this->numerator) + (y * f.numerator);
+
+		numerator = num;
+		denominator = LCM;
+		simplify();
+
 		return *this;
 	}
 };
