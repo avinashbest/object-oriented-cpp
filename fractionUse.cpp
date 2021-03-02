@@ -1,21 +1,54 @@
-#include<iostream>
-#include"fraction.cpp"
+#include <iostream>
+#include "fraction.cpp"
 using namespace std;
 
 int main()
 {
-	fraction f1(10,2);
-	fraction f2(15,4);
+	fraction f1(10, 2);
+	fraction f2(15, 4);
 
-	f1.add(f2);
+	// f1.add(f2);
 
+	// f1.print();
+	// f2.print();
+
+	// f1.multiply(f2)f
+
+	// f1.print();
+	// f2.print();
+
+	// fraction const f3(11, 4);
+	// cout << f3.getNumerator() << " " << f3.getDenominator() << endl;
+
+	fraction f3 = f1.add(f2);
+
+	cout << "\nFraction f1 = ";
 	f1.print();
+	cout << "Fraction f2 = ";
 	f2.print();
-	
-	f1.multiply(f2);
 
-	f1.print();
-	f2.print();
+	cout << "\nAfter Addition: " << endl;
+	cout << "Fraction f3 = ";
+	f3.print();
+
+	fraction f4 = f1 + f2;
+	cout << "Fraction f4 = ";
+	f4.print();
+
+	cout << "\nAfter Multiplication: " << endl;
+	f3 = f1 * f2;
+	cout << "Fraction = ";
+	f3.print();
+
+	cout << "\nChecking Equality: " << endl;
+	if (f1 == f2)
+	{
+		cout << "Equal" << endl;
+	}
+	else
+	{
+		cout << "Not Equal" << endl;
+	}
 
 	return 0;
 }
