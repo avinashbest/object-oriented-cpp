@@ -110,4 +110,11 @@ public:
 	{
 		return (this->numerator == f.numerator && this->denominator == f.denominator);
 	}
+	//Overloading operator++
+	fraction &operator++()
+	{
+		this->numerator = this->numerator + denominator;
+		simplify();
+		return *this;
+	}
 };
