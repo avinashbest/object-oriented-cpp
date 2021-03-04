@@ -3,7 +3,7 @@ class vehicle
 
 public:
     string color;
-    void print()
+    virtual void print()
     {
         cout << "Vehicle" << endl;
     }
