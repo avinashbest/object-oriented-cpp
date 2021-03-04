@@ -6,14 +6,14 @@ using namespace std;
 
 int main()
 {
-    vehicle v;
+    vehicle v; //error => abstract class
     car c;
 
     v.print(); //Vehicle class print()
 
     c.print(); //Car class print()
 
-    vehicle *v1 = new vehicle;
+    vehicle *v1 = new vehicle; //error => abstract class
 
     vehicle *v2;
     //v2 = &v;

@@ -1,6 +1,5 @@
 class car : public vehicle
 {
-
 public:
     int numGears;
     void print()
